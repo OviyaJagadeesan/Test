@@ -1,0 +1,152 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.out-Text {
+    height: 20px;
+    width: fit-content;
+    float: left;
+    margin-left: -20px;
+}
+
+.out-TextField {
+    height: 25px;
+    width: fit-content;
+    border: 1px solid #ced4da;
+    float: left;
+    border-radius: 4px;
+}
+
+.due-Text {
+    height: 20px;
+}
+
+.due-TextField {
+    height: 25px;
+    border-radius: 4px;
+    width: 100px;
+    border: 1px solid #ced4da;
+}
+
+.priority-Text {
+    height: 20px;
+    width: 50px;
+}
+
+.high-Img {
+    background: transparent url('/src/Images/High.png');
+    height: 24.5px;
+    width: 28px;
+    float: left;
+}
+
+.high-Text {
+    float: left;
+}
+
+.medium-Img {
+    background: transparent url('/src/Images/Medium.png');
+    height: 24.5px;
+    width: 28px;
+    float: left;
+}
+
+.medium-Text {
+    float: left;
+}
+
+.low-Img {
+    background: transparent url('/src/Images/Low.png');
+    height: 24.5px;
+    width: 28px;
+    float: left;
+}
+
+.low-Text {
+    float: left;
+}
+
+.link-img{
+    background: transparent url('/src/Images/link.png');
+}
+.req {
+    width: 100px;
+    margin-left: 5px;
+    margin-top: 18px;
+}
+
+.vl {
+    border-left: 1px solid gray;
+    height: 60px;
+}
+
+.postponebox {
+    margin-top: 10px;
+    text-align: center;
+    justify-content: left;
+    display: flex;
+    border-radius: 5px;
+}
+
+.postpone {
+    margin-left: 15px;
+}
+
+.contentbox{
+    height: 200px;
+    line-height: 18px; 
+    margin-top: 11px; 
+    padding-bottom: 10px;
+    padding-right: 15px;
+    text-align: justify;
+}
+
+.content{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.addlinkbox{
+    height: 30px;
+    line-height: 18px; 
+    margin-top: 11px; 
+    border-radius: 5px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    text-align: justify;
+}
+
+.input-group-text{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.add{
+    margin-left: 15px; 
+}
+
+.align{
+    margin-top: 10px;
+}
+
+.input-group-text {
+    background-color: white !important;
+}
+
+.vline{
+    border-left: 1px solid gray;
+    height: 30px;  
+}
+
+
+@media only screen and (min-width:700px)and(max-width:992px) {
+    .wi-modal {
+        width: 700px;
+    }
+    .content{
+        width: fit-content !important;
+    }
+}

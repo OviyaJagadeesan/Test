@@ -1,0 +1,67 @@
+.new-sparrow{
+    height: 30px;
+}
+
+.logo {
+    background: transparent url('../../Images/Union\ 14.png') 0% 0% no-repeat padding-box;
+    height: 30px;
+    width: 30px;
+    flex-direction: column;
+    float: left;
+}
+
+.text{
+    float: right;
+    font-size: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax( 11rem , 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
+
+.demo {
+    margin: 20px auto;
+    align-items: center;
+    border-width: 2px;
+    width: 150px !important;
+    height: 100px;
+    padding-bottom: 25px;
+    border-color: rgb(219, 213, 213);
+    padding-top: 25px;
+}
+
+.modal-content {
+    align-content: center;
+    top: 90px;
+}
+
+.close{
+    background: transparent url('../../Images/delete.png') 0% 0% no-repeat padding-box;
+    background-repeat: no-repeat;
+    height: 30px;
+    margin-left: 200px;
+    width: 30px;
+    background-color: red;
+      color: blue;
+}
+
+@media only screen and (min-width: 200px) and (max-width:400px) {
+    .demo{
+        width: 200px !important;
+    }
+} 
+
+@media only screen and (min-width:280px ) and (max-width:753px) {
+    .demo{
+        width: 190px !important;
+    }
+}
+
+@media only screen and (min-width:418px ) and (max-width:4602px) {
+    .demo{
+        width:150px !important;
+    }
+}
