@@ -8,7 +8,7 @@ function CreateSparrow() {
   const navigate=useNavigate();
   const [lgShow, setLgShow] = useState(false);
 
-  const onClick=()=>{
+  const onClick=(user)=>{
     navigate('/dec');
   }
   const data = [
@@ -68,7 +68,7 @@ function CreateSparrow() {
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="modal-head-foot-bg-color">
           <Modal.Title id="example-modal-sizes-title-lg">
             Select Outcome
           </Modal.Title>
@@ -76,9 +76,8 @@ function CreateSparrow() {
         <Modal.Body>
           <div className="grid">
             {data.map((user) => (
-              <div className="card demo" onClick={onClick}>
+              <div className="card demo" onClick={()=>{onClick(user)}}>
                 <div className="outcomeText">{user.text}</div>
-                {/* <div>{user.image}</div> */}
                 <img src={user.image} />
               </div>
             ))}

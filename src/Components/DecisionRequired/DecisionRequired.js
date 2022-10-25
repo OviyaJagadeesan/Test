@@ -1,9 +1,26 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import "../DecisionRequired/DecisionRequired.css";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form'
+import Badge from 'react-bootstrap/Badge'
 
 function DecisionRequired() {
   const [lgShow, setLgShow] = useState(true);
+
+  const current = new Date();
+  const date = `${current.getDate()}/${
+    current.getMonth() + 1
+  }/${current.getFullYear()}`;
+
+  const [inputText, setInputText] = useState("");
+  const [characterLimit] = useState(400);
+  // event handler
+  const handleChange = event => {
+    setInputText(event.target.value);
+  };
 
   return (
     <>
@@ -14,31 +31,19 @@ function DecisionRequired() {
           backdrop="static"
           keyboard={false}
           onHide={() => setLgShow(false)}
-          aria-labelledby="example-modal-sizes-title-lg"
           className="wi-modal"
         >
-          <Modal.Header closeButton>
+          <Modal.Header closeButton className="modal-head-foot-bg-color">
             <Modal.Title id="example-modal-sizes-title-lg">
-              Select Outcome
+              Create New Sparrow
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="content">
               <div className="out-Text">Outcome</div>
-              <input
-                type="text"
-                class="out-TextField"
-                placeholder=""
-                aria-describedby="basic-addon1"
-              />
-              {/* <div className="out-TextField">Decision Required</div> */}
+              <input type="text" className="out-TextField" />
               <div className="due-Text">Due Date</div>
-              <input
-                type="text"
-                class="due-TextField"
-                placeholder=""
-                aria-describedby="basic-addon1"
-              />
+              <div className="due-TextField">{date}</div>
               <div className="priority-Text">Priority</div>
               <div>
                 <div className="high-Img"></div>
@@ -54,55 +59,70 @@ function DecisionRequired() {
               </div>
             </div>
             <div>
-              <div class="input-group mb-3">
-                <span class="input-group-text align" id="basic-addon1">
-                  Request to
-                </span>
-                <input
-                  type="text"
-                  class="form-control align"
-                  placeholder=""
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                />
+              <div className="input-group mb-3">
+                <span className="input-group-text align">Request to</span>
+                <input type="text" className="form-control align" />
               </div>
             </div>
             <div>
-              <input
-                type="password"
-                class="form-control postponebox"
-                id="exampleInputPassword1"
-                placeholder=""
-              ></input>
+              <input type="text" placeholder="Add Title" className="form-control postponebox"></input>
             </div>
             <div>
-              <input
-                type="password"
-                class="form-control contentbox"
-                id="exampleInputPassword1"
-                placeholder=""
-              ></input>
+              <Container>
+                <Row className="justify-content-md-center">
+                  <Col xs lg="3">
+                    <Form>
+                      <Form.Group
+                        className="mb-3"
+                        controlId="exampleForm.ControlTextarea1"
+                      >
+                        <Form.Control
+                          as="textarea"
+                          className="contentbox"
+                          placeholder="Detail the ask"
+                          rows={3}
+                          value={inputText}
+                          onChange={handleChange}
+                          isInvalid={inputText.length > characterLimit}
+                        />
+                        <Badge
+                          className="mt-3"
+                          bg={`${
+                            inputText.length > characterLimit
+                              ? "danger"
+                              : "primary"
+                          }`}
+                        >
+                          {inputText.length}/{characterLimit}
+                        </Badge>
+                      </Form.Group>
+                    </Form>
+                  </Col>
+                </Row>
+              </Container>
             </div>
-            <div class="input-group mb-3">
-              <span class="input-group-text Link-img" id="basic-addon1"></span>
-              <input
-                type="text"
-                class="form-control"
-                placeholder=""
-                aria-label="Username"
-                aria-describedby="basic-addon1"
-              ></input>
+            <div className="input-group mb-3">
+              <span className="input-group-text">
+                <div className="link-img"></div>
+              </span>
+              <input type="text" placeholder="Add links" className="form-control link-text"></input>
             </div>
-            {/* <input
-              type="password"
-              class="form-control addlinkbox"
-              id="exampleInputPassword1"
-              placeholder=""
-            ></input>
-            <div className="add">
-              <div className="link-img"></div>
-            </div> */}
           </Modal.Body>
+          <div className="modal-head-foot-bg-color">
+            <div class="modal-footer foot-align">
+              <div className="modal-foot-align-left">
+                <div className="delete-img"></div>
+              </div>
+              <div className="modal-foot-align-right">
+                <button type="button" class="btn-save" data-dismiss="modal">
+                  Save
+                </button>
+                <button type="button" class="btn-send">
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
         </Modal>
       </div>
     </>

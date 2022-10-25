@@ -1,3 +1,7 @@
+.modal-head-foot-bg-color{
+    background-color: #F7F6FD;
+}
+
 .new-sparrow{
     height: 30px;
 }
@@ -65,3 +69,11 @@
         width:150px !important;
     }
 }
+
+@media only screen and (min-width: 900px){
+.justify-content-md-center {
+    justify-content: left!important;
+    margin-left: 10px;
+}
+}
+

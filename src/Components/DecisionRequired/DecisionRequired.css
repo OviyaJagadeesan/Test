@@ -1,3 +1,6 @@
+.modal-head-foot-bg-color{
+    background-color: #F7F6FD;
+}
 .content {
     display: flex;
     flex-direction: row;
@@ -27,7 +30,6 @@
 .due-TextField {
     height: 25px;
     border-radius: 4px;
-    width: 100px;
     border: 1px solid #ced4da;
 }
 
@@ -70,7 +72,9 @@
 }
 
 .link-img{
-    background: transparent url('/src/Images/link.png');
+    background: transparent url('/src/Images/link.png') 0% 0% no-repeat padding-box;
+    height: 20px;
+    width: 20px;
 }
 .req {
     width: 100px;
@@ -85,10 +89,12 @@
 
 .postponebox {
     margin-top: 10px;
-    text-align: center;
+    vertical-align: top;
+    text-align: left;
     justify-content: left;
     display: flex;
     border-radius: 5px;
+
 }
 
 .postpone {
@@ -98,9 +104,11 @@
 .contentbox{
     height: 200px;
     line-height: 18px; 
-    margin-top: 11px; 
+    margin-top: 15px; 
     padding-bottom: 10px;
     padding-right: 15px;
+    vertical-align: top;
+    text-align: left;
     text-align: justify;
 }
 
@@ -122,6 +130,11 @@
 .input-group-text{
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    margin-top: 10px;
+}
+
+.link-text{
+    margin-top: 10px;
 }
 
 .add{
@@ -141,6 +154,45 @@
     height: 30px;  
 }
 
+.modal-foot-align-left{
+    justify-content: left;
+}
+
+.modal-foot-align-right{
+    justify-content: right;
+}
+
+.foot-align{
+    justify-content: space-between;
+}
+
+.delete-img{
+    height: 19.69px;
+    width: 16px;
+    margin-right: 750px; 
+    background: transparent url('/src/Images/delete-img.png') 0% 0% no-repeat padding-box;
+}
+
+.btn-save{
+    border: 1px solid #6A5AE0;
+    width: 118px;
+    height: 40px;
+    float: left;
+    border-radius: 4px;
+}
+
+.modal{
+    --bs-modal-footer-gap: -2.5rem !important;
+}
+
+.btn-send{
+    margin-left: 8px;
+    border: 1px solid #6A5AE0;
+    width: 120px;
+    height: 40px;
+    background-color: #6A5AE0;
+    border-radius: 4px;
+}
 
 @media only screen and (min-width:700px)and(max-width:992px) {
     .wi-modal {
