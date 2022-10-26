@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import "../DecisionRequired/DecisionRequired.css";
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Form from 'react-bootstrap/Form'
-import Badge from 'react-bootstrap/Badge'
+import Badge from "react-bootstrap/Badge";
+import { useNavigate } from "react-router-dom";
 
 function DecisionRequired() {
+  const navigate = useNavigate();
   const [lgShow, setLgShow] = useState(true);
 
   const current = new Date();
@@ -17,9 +15,13 @@ function DecisionRequired() {
 
   const [inputText, setInputText] = useState("");
   const [characterLimit] = useState(400);
-  // event handler
-  const handleChange = event => {
+
+  const handleChange = (event) => {
     setInputText(event.target.value);
+  };
+
+  const SendButton = () => {
+    navigate("/spr-list");
   };
 
   return (
@@ -65,47 +67,39 @@ function DecisionRequired() {
               </div>
             </div>
             <div>
-              <input type="text" placeholder="Add Title" className="form-control postponebox"></input>
+              <input
+                type="text"
+                placeholder="Add Title"
+                className="form-control postponebox"
+              ></input>
             </div>
             <div>
-              <Container>
-                <Row className="justify-content-md-center">
-                  <Col xs lg="3">
-                    <Form>
-                      <Form.Group
-                        className="mb-3"
-                        controlId="exampleForm.ControlTextarea1"
-                      >
-                        <Form.Control
-                          as="textarea"
-                          className="contentbox"
-                          placeholder="Detail the ask"
-                          rows={3}
-                          value={inputText}
-                          onChange={handleChange}
-                          isInvalid={inputText.length > characterLimit}
-                        />
-                        <Badge
-                          className="mt-3"
-                          bg={`${
-                            inputText.length > characterLimit
-                              ? "danger"
-                              : "primary"
-                          }`}
-                        >
-                          {inputText.length}/{characterLimit}
-                        </Badge>
-                      </Form.Group>
-                    </Form>
-                  </Col>
-                </Row>
-              </Container>
+              <textarea
+                className="form-control contentbox"
+                placeholder="Detail the ask"
+                rows={3}
+                value={inputText}
+                onChange={handleChange}
+                isInvalid={inputText.length > characterLimit}
+              />
+              <Badge
+                className="mt-3"
+                bg={`${
+                  inputText.length > characterLimit ? "danger" : "primary"
+                }`}
+              >
+                {inputText.length}/{characterLimit}
+              </Badge>
             </div>
-            <div className="input-group mb-3">
+            <div className="input-group">
               <span className="input-group-text">
                 <div className="link-img"></div>
               </span>
-              <input type="text" placeholder="Add links" className="form-control link-text"></input>
+              <input
+                type="text"
+                placeholder="Add links"
+                className="form-control link-text"
+              ></input>
             </div>
           </Modal.Body>
           <div className="modal-head-foot-bg-color">
@@ -117,7 +111,7 @@ function DecisionRequired() {
                 <button type="button" class="btn-save" data-dismiss="modal">
                   Save
                 </button>
-                <button type="button" class="btn-send">
+                <button type="button" class="btn-send" onClick={SendButton}>
                   Send
                 </button>
               </div>

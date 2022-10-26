@@ -102,14 +102,9 @@
 }
 
 .contentbox{
-    height: 200px;
-    line-height: 18px; 
+    height: 200px; 
     margin-top: 15px; 
-    padding-bottom: 10px;
-    padding-right: 15px;
     vertical-align: top;
-    text-align: left;
-    text-align: justify;
 }
 
 .content{
@@ -192,6 +187,10 @@
     height: 40px;
     background-color: #6A5AE0;
     border-radius: 4px;
+}
+
+.mt-3{
+    float: right;
 }
 
 @media only screen and (min-width:700px)and(max-width:992px) {

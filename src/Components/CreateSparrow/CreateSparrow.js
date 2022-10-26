@@ -11,6 +11,7 @@ function CreateSparrow() {
   const onClick=(user)=>{
     navigate('/dec');
   }
+  
   const data = [
     {
       id: 1,
