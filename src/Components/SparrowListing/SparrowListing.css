@@ -1,6 +1,7 @@
 .spr-list-header{
     height: 56px;
     display: flex;
-    flex-direction: row ;
+    flex-direction: column ;
     border-radius: 0px;
+    justify-content: space-between;
 }

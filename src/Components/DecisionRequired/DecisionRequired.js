@@ -20,8 +20,31 @@ function DecisionRequired() {
     setInputText(event.target.value);
   };
 
+  const [req, setReq] = useState("");
+  const [ErrorReq, setErrorReq] = useState("");
+  const [title, setTitle] = useState("");
+  const [ErrorTitle, setErrorTitle] = useState("");
+
   const SendButton = () => {
-    navigate("/spr-list");
+    setErrorReq("");
+    setErrorTitle(""); 
+
+    if (!req) {
+      setErrorReq("Enter from address");
+    } else if (!/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(req)) {
+      setErrorReq("Enter the proper email id");
+    } else if (!title) {
+      setErrorTitle("Enter Title");
+    } else {
+      navigate("/spr-list");
+    }
+  };
+
+  const reqHandler = (t) => {
+    setReq(t);
+  };
+  const titleHandler = (t) => {
+    setTitle(t);
   };
 
   return (
@@ -63,15 +86,30 @@ function DecisionRequired() {
             <div>
               <div className="input-group mb-3">
                 <span className="input-group-text align">Request to</span>
-                <input type="text" className="form-control align" />
+                <input
+                  type="text"
+                  className="form-control align"
+                  onChangeText={(t) => reqHandler(t)}
+                />
+                <div>
+                {ErrorReq != "" ? (
+                  <div>{ErrorReq}</div>
+                ) : null}
+              </div>
               </div>
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Add Title"
+                onChangeText={(t) => titleHandler(t)}
                 className="form-control postponebox"
               ></input>
+              <div>
+                {ErrorTitle != "" ? (
+                  <div>{ErrorTitle}</div>
+                ) : null}
+              </div>
             </div>
             <div>
               <textarea

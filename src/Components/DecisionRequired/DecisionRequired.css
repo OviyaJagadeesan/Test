@@ -200,4 +200,7 @@
     .content{
         width: fit-content !important;
     }
+    .priority-Text {
+        margin-top: 100px;
+    }
 }
