@@ -27,10 +27,10 @@ function DecisionRequired() {
 
   const SendButton = () => {
     setErrorReq("");
-    setErrorTitle(""); 
+    setErrorTitle("");
 
     if (!req) {
-      setErrorReq("Enter from address");
+      setErrorReq("Enter email address");
     } else if (!/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(req)) {
       setErrorReq("Enter the proper email id");
     } else if (!title) {
@@ -38,13 +38,6 @@ function DecisionRequired() {
     } else {
       navigate("/spr-list");
     }
-  };
-
-  const reqHandler = (t) => {
-    setReq(t);
-  };
-  const titleHandler = (t) => {
-    setTitle(t);
   };
 
   return (
@@ -65,22 +58,22 @@ function DecisionRequired() {
           </Modal.Header>
           <Modal.Body>
             <div className="content">
-              <div className="out-Text">Outcome</div>
+              <label className="out-Text">Outcome</label>
               <input type="text" className="out-TextField" />
-              <div className="due-Text">Due Date</div>
+              <label className="due-Text">Due Date</label>
               <div className="due-TextField">{date}</div>
-              <div className="priority-Text">Priority</div>
+              <label className="priority-Text">Priority</label>
               <div>
                 <div className="high-Img"></div>
-                <div className="high-Text">High</div>
+                <label className="high-Text">High</label>
               </div>
               <div>
                 <div className="medium-Img"></div>
-                <div className="medium-Text">Medium</div>
+                <label className="medium-Text">Medium</label>
               </div>
               <div>
                 <div className="low-Img"></div>
-                <div className="low-Text">Low</div>
+                <label className="low-Text">Low</label>
               </div>
             </div>
             <div>
@@ -89,27 +82,21 @@ function DecisionRequired() {
                 <input
                   type="text"
                   className="form-control align"
-                  onChangeText={(t) => reqHandler(t)}
+                  onChange={(e) => {
+                    setReq(e.target.value);
+                  }}
                 />
-                <div>
-                {ErrorReq != "" ? (
-                  <div>{ErrorReq}</div>
-                ) : null}
-              </div>
               </div>
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Add Title"
-                onChangeText={(t) => titleHandler(t)}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
                 className="form-control postponebox"
               ></input>
-              <div>
-                {ErrorTitle != "" ? (
-                  <div>{ErrorTitle}</div>
-                ) : null}
-              </div>
             </div>
             <div>
               <textarea
@@ -139,22 +126,31 @@ function DecisionRequired() {
                 className="form-control link-text"
               ></input>
             </div>
-          </Modal.Body>
-          <div className="modal-head-foot-bg-color">
-            <div class="modal-footer foot-align">
-              <div className="modal-foot-align-left">
-                <div className="delete-img"></div>
-              </div>
-              <div className="modal-foot-align-right">
-                <button type="button" class="btn-save" data-dismiss="modal">
-                  Save
-                </button>
-                <button type="button" class="btn-send" onClick={SendButton}>
-                  Send
-                </button>
-              </div>
+            <div className="errorView">
+              {ErrorReq !== "" ? <p>{ErrorReq}</p> : null}
+              {ErrorTitle !== "" ? <p>{ErrorTitle}</p> : null}
             </div>
-          </div>
+          </Modal.Body>
+          <Modal.Footer className="modal-foot-bg-color">
+            <div className="delete-img"></div>
+            <div className="modal-foot-buttons">
+            <button type="button" className="btn-save" disabled="modal">Save</button>
+            <button type="button" className="btn-send" onClick={SendButton}>Send</button>
+            </div>
+            {/* <div className="modal-head-foot-bg-color">
+                <div className="modal-foot-align-left">
+                  <div className="delete-img"></div>
+                </div>
+                <div className="modal-foot-align-right">
+                  <button type="button" class="btn-save" data-dismiss="modal">
+                    Save
+                  </button>
+                  <button type="button" class="btn-send" onClick={SendButton}>
+                    Send
+                  </button>
+                </div>
+            </div> */}
+          </Modal.Footer>
         </Modal>
       </div>
     </>

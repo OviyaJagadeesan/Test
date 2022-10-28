@@ -1,6 +1,15 @@
-.modal-head-foot-bg-color{
+.modal-head-bg-color{
     background-color: #F7F6FD;
+    display: flex;
+    justify-content: space-between;
 }
+
+.modal-foot-bg-color{
+    background-color: #F7F6FD;
+    display: flex;
+    justify-content: space-between;
+}
+
 .content {
     display: flex;
     flex-direction: row;
@@ -149,22 +158,10 @@
     height: 30px;  
 }
 
-.modal-foot-align-left{
-    justify-content: left;
-}
-
-.modal-foot-align-right{
-    justify-content: right;
-}
-
-.foot-align{
-    justify-content: space-between;
-}
-
 .delete-img{
     height: 19.69px;
     width: 16px;
-    margin-right: 750px; 
+    /* margin-right: 750px;  */
     background: transparent url('/src/Images/delete-img.png') 0% 0% no-repeat padding-box;
 }
 
@@ -181,7 +178,7 @@
 }
 
 .btn-send{
-    margin-left: 8px;
+    /* margin-left: 30px; */
     border: 1px solid #6A5AE0;
     width: 120px;
     height: 40px;
@@ -191,6 +188,19 @@
 
 .mt-3{
     float: right;
+}
+
+.errorView{
+    margin-top: 20px;
+    height: 30px;
+    color: red;
+    text-align: center;
+}
+
+.modal-foot-buttons{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
 }
 
 @media only screen and (min-width:700px)and(max-width:992px) {
