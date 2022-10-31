@@ -42,6 +42,10 @@
     top: 90px;
 }
 
+.outcomeImage{
+    padding: 5px;
+}
+
 .close{
     background: transparent url('../../Images/delete.png') 0% 0% no-repeat padding-box;
     background-repeat: no-repeat;
@@ -64,7 +68,7 @@
     }
 }
 
-@media only screen and (min-width:418px ) and (max-width:4602px) {
+@media only screen and (min-width:418px ) and (max-width:602px) {
     .demo{
         width:150px !important;
     }

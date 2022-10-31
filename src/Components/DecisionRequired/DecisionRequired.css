@@ -5,9 +5,9 @@
 }
 
 .modal-foot-bg-color{
-    background-color: #F7F6FD;
+    background-color: #F7F6FD !important;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .content {
@@ -37,9 +37,10 @@
 }
 
 .due-TextField {
-    height: 25px;
+    height: fit-content;
     border-radius: 4px;
     border: 1px solid #ced4da;
+    padding: 5px;
 }
 
 .priority-Text {
@@ -56,6 +57,7 @@
 
 .high-Text {
     float: left;
+    margin-left: 5px;
 }
 
 .medium-Img {
@@ -67,6 +69,7 @@
 
 .medium-Text {
     float: left;
+    margin-left: 5px;
 }
 
 .low-Img {
@@ -78,6 +81,7 @@
 
 .low-Text {
     float: left;
+    margin-left: 5px;
 }
 
 .link-img{
@@ -190,6 +194,10 @@
     float: right;
 }
 
+.ovi{
+    background-color: white !important;
+    color: black;
+}
 .errorView{
     margin-top: 20px;
     height: 30px;

@@ -1,7 +1,245 @@
+.whole-div{
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEEFC;
+    width: 1440px;
+}
+
 .spr-list-header{
     height: 56px;
+    background-color:white;
+    flex-direction: row;
     display: flex;
-    flex-direction: column ;
-    border-radius: 0px;
     justify-content: space-between;
 }
+
+.spr-list-bottom{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-btn{
+    height: 32px;
+    width: 120px;
+    margin-top: 12px;
+    margin-left: 20px;
+    margin-bottom: 12px;
+    background-color: white;
+    text-align: center;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.tab-left{
+    width: 255px;
+    display: flex;
+    height: 700px;
+    flex-direction: column;
+    background-color:white;
+}
+
+.home{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-img{
+    background: transparent url('/src/Images/home.png') no-repeat; 
+    height: 15.96px;
+    width: 16px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.home-text{
+    display: flex;
+    margin-top: 18px;
+    margin-left: 12px;
+}
+
+.allsparrows{
+    display: flex;
+    flex-direction: row;
+}
+
+.all-spr-img{
+    background: transparent url('/src/Images/home.png') no-repeat; 
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.all-spr-text{
+    display: flex;
+    margin-top: 18px;
+    margin-left: 12px;
+}
+
+.new-spr{
+    margin-top: 12PX;
+    display: flex;
+    flex-direction: row;
+    width: 211px;
+    background-color: blue;
+    height: 28px;
+    border: 1px solid blue;
+    margin-left: 20px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.new-spr-img{
+    background: transparent url('/src/Images/Union\ 14.png') no-repeat; 
+    height: 16px;
+    width: 16px;
+    margin-top: 5px;
+}
+
+.new-spr-text{
+    margin-left: 10px;
+    color: white;
+}
+
+.received{
+    display: flex;
+    flex-direction: row;
+}
+
+.received-img{
+    background: transparent url('/src/Images/dropdown.png') no-repeat; 
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.received-text{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+
+.draft{
+    display: flex;
+    flex-direction: row;
+}
+
+.draft-img{
+    background: transparent url('/src/Images/dropdown.png') no-repeat; 
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.draft-text{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.sent{
+    display: flex;
+    flex-direction: row;
+}
+
+.sent-img{
+    background: transparent url('/src/Images/dropdown.png') no-repeat; 
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.sent-text{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.closed{
+    display: flex;
+    flex-direction: row;
+}
+
+.closed-img{
+    background: transparent url('/src/Images/dropdown.png') no-repeat; 
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.closed-text{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.help-img{
+    background: transparent url('/src/Images/help.png') no-repeat;
+    height: 30px;
+    width: 30px;
+    
+}
+
+.tab-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.all-spr-header-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.all-spr-header{
+    display: flex;
+    margin-top: 18px;
+    margin-left: 12px;
+    width: 90px;
+}
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 30px;
+    border: 1px solid gray;
+    margin: 15px;
+    border-radius: 20px;
+}
+
+.search-bar-img{
+    background: transparent url('/src/Images/search-img.png') no-repeat; 
+    height: 15.78px;
+    width:16px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.priority-drop-down-div{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border: 1px solid gray;
+    height: fit-content;
+}
+
+.priority-drop-down-text{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.priority-drop-down-img{
+    background: transparent url('/src/Images/dropdown.png') no-repeat; 
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+

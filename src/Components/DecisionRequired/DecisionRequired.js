@@ -63,15 +63,15 @@ function DecisionRequired() {
               <label className="due-Text">Due Date</label>
               <div className="due-TextField">{date}</div>
               <label className="priority-Text">Priority</label>
-              <div>
+              <div className="high-div">
                 <div className="high-Img"></div>
                 <label className="high-Text">High</label>
               </div>
-              <div>
+              <div className="medium-div">
                 <div className="medium-Img"></div>
                 <label className="medium-Text">Medium</label>
               </div>
-              <div>
+              <div className="low-div">
                 <div className="low-Img"></div>
                 <label className="low-Text">Low</label>
               </div>
@@ -108,7 +108,7 @@ function DecisionRequired() {
                 isInvalid={inputText.length > characterLimit}
               />
               <Badge
-                className="mt-3"
+                className="mt-3 ovi"
                 bg={`${
                   inputText.length > characterLimit ? "danger" : "primary"
                 }`}
@@ -134,22 +134,13 @@ function DecisionRequired() {
           <Modal.Footer className="modal-foot-bg-color">
             <div className="delete-img"></div>
             <div className="modal-foot-buttons">
-            <button type="button" className="btn-save" disabled="modal">Save</button>
-            <button type="button" className="btn-send" onClick={SendButton}>Send</button>
+              <button type="button" className="btn-save" disabled="modal">
+                Save
+              </button>
+              <button type="button" className="btn-send" onClick={SendButton}>
+                Send
+              </button>
             </div>
-            {/* <div className="modal-head-foot-bg-color">
-                <div className="modal-foot-align-left">
-                  <div className="delete-img"></div>
-                </div>
-                <div className="modal-foot-align-right">
-                  <button type="button" class="btn-save" data-dismiss="modal">
-                    Save
-                  </button>
-                  <button type="button" class="btn-send" onClick={SendButton}>
-                    Send
-                  </button>
-                </div>
-            </div> */}
           </Modal.Footer>
         </Modal>
       </div>

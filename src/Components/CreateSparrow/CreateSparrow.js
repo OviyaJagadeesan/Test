@@ -78,8 +78,8 @@ function CreateSparrow() {
           <div className="grid">
             {data.map((user) => (
               <div className="card demo" onClick={()=>{onClick(user)}}>
+                <img className="outcomeImage" src={user.image} />
                 <div className="outcomeText">{user.text}</div>
-                <img src={user.image} />
               </div>
             ))}
           </div>
