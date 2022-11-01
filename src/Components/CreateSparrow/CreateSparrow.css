@@ -1,27 +1,10 @@
-.modal-head-foot-bg-color{
+.modal-head-foot-bg-color {
     background-color: #F7F6FD;
-}
-
-.new-sparrow{
-    height: 30px;
-}
-
-.logo {
-    background: transparent url('../../Images/Union\ 14.png') 0% 0% no-repeat padding-box;
-    height: 30px;
-    width: 30px;
-    flex-direction: column;
-    float: left;
-}
-
-.text{
-    float: right;
-    font-size: 12px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax( 11rem , 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
     grid-auto-rows: auto;
     grid-gap: 1rem;
 }
@@ -42,42 +25,315 @@
     top: 90px;
 }
 
-.outcomeImage{
+.outcomeImage {
     padding: 5px;
 }
 
-.close{
+.close {
     background: transparent url('../../Images/delete.png') 0% 0% no-repeat padding-box;
     background-repeat: no-repeat;
     height: 30px;
     margin-left: 200px;
     width: 30px;
     background-color: red;
-      color: blue;
+    color: blue;
+}
+
+.fade.modal.show{
+    background-color: #b9b8b8;
 }
 
 @media only screen and (min-width: 200px) and (max-width:400px) {
-    .demo{
+    .demo {
         width: 200px !important;
     }
-} 
+}
 
-@media only screen and (min-width:280px ) and (max-width:753px) {
-    .demo{
+@media only screen and (min-width:280px) and (max-width:753px) {
+    .demo {
         width: 190px !important;
     }
 }
 
-@media only screen and (min-width:418px ) and (max-width:602px) {
-    .demo{
-        width:150px !important;
+@media only screen and (min-width:418px) and (max-width:602px) {
+    .demo {
+        width: 150px !important;
     }
 }
 
-@media only screen and (min-width: 900px){
-.justify-content-md-center {
-    justify-content: left!important;
-    margin-left: 10px;
-}
+@media only screen and (min-width: 900px) {
+    .justify-content-md-center {
+        justify-content: left !important;
+        margin-left: 10px;
+    }
 }
 
+
+
+.whole-div {
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEEFC;
+    width: 1440px;
+    height: 810px;
+}
+
+.spr-list-header {
+    height: 56px;
+    background-color: white;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.spr-list-bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-btn {
+    height: 32px;
+    width: 120px;
+    margin-top: 12px;
+    margin-left: 20px;
+    margin-bottom: 12px;
+    background-color: white;
+    text-align: center;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.tab-left {
+    width: 255px;
+    display: flex;
+    height: 700px;
+    flex-direction: column;
+    background-color: white;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+}
+
+.home-img {
+    background: transparent url('/src/Images/home.png') no-repeat;
+    height: 15.96px;
+    width: 16px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.home-text {
+    display: flex;
+    margin-top: 18px;
+    margin-left: 12px;
+}
+
+.allsparrows {
+    display: flex;
+    flex-direction: row;
+}
+
+.all-spr-img {
+    background: transparent url('/src/Images/home.png') no-repeat;
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.all-spr-text {
+    display: flex;
+    margin-top: 18px;
+    margin-left: 12px;
+}
+
+.new-spr {
+    margin-top: 12PX;
+    display: flex;
+    flex-direction: row;
+    width: 211px;
+    background-color: #0d6efd;
+    height: 28px;
+    border: 1px solid #0d6efd;
+    border-radius: 5px;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.new-spr-img {
+    background: transparent url('/src/Images/Union\ 14.png') no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-top: 5px;
+}
+
+.new-spr-text {
+    margin-left: 10px;
+    color: white;
+}
+
+.received {
+    display: flex;
+    flex-direction: row;
+}
+
+.received-img {
+    background: transparent url('/src/Images/dropdown.png') no-repeat;
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.received-text {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+
+.draft {
+    display: flex;
+    flex-direction: row;
+}
+
+.draft-img {
+    background: transparent url('/src/Images/dropdown.png') no-repeat;
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.draft-text {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.sent {
+    display: flex;
+    flex-direction: row;
+}
+
+.sent-img {
+    background: transparent url('/src/Images/dropdown.png') no-repeat;
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.sent-text {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.closed {
+    display: flex;
+    flex-direction: row;
+}
+
+.closed-img {
+    background: transparent url('/src/Images/dropdown.png') no-repeat;
+    height: 15.96px;
+    width: 11.14px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.closed-text {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.form-floating>.bi-calendar-date+.datepicker_input+label {
+    padding-left: 3.5rem;
+    z-index: 3;
+}
+
+.help-img {
+    margin-top: 18px;
+    background: transparent url('/src/Images/help.png') no-repeat;
+    height: 30px;
+    width: 30px;
+
+}
+
+.tab-right {
+    width: 1184px;
+    background-color: rgb(163, 159, 159);
+    display: flex;
+    flex-direction: column;
+}
+
+.all-spr-header-div {
+    display: flex;
+    flex-direction: row;
+    width: 1184px;
+}
+
+.all-spr-header {
+    display: flex;
+    margin-top: 18px;
+    margin-left: 12px;
+    width: 90px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    width: 594px;
+    height: 30px;
+    border: 1px solid #707070;
+    margin: 15px;
+    border-radius: 16px;
+}
+
+.search-bar-img {
+    background: transparent url('/src/Images/search-img.png') no-repeat;
+    height: 15.78px;
+    width: 16px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.header-top {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.clr-filter {
+    margin-top: 18px;
+}
+
+.priority-drop-down-div {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 136.71px;
+    margin-top: 15px;
+    height: 30px;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+.priority-drop-down-text {
+    display: flex;
+    margin-top: -8px;
+}
+
+.priority-drop-down-img {
+    background: transparent url('/src/Images/dropdown.png') no-repeat;
+    height: 15.96px;
+    width: 11.14px;
+    /* margin-left: 20px; */
+    /* margin-top: 20px; */
+}
