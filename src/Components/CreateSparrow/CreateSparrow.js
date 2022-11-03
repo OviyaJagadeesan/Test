@@ -1,12 +1,63 @@
+import { Button } from "bootstrap";
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import "../CreateSparrow/CreateSparrow.css";
+import { MDBCol } from "mdbreact";
+import SentSparrows from "../SentSparrows/SentSparrows";
+import ReceivedSparrows from "../ReceivedSparrows/ReceivedSparrows";
+import AllSparrows from "../AllSparrows/AllSparrows";
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
-import "../CreateSparrow/CreateSparrow.css";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+
+// import AllSparrows from "../AllSparrows/AllSparrows";
+// import SentSparrows from "../SentSparrows/SentSparrows";
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
 
 function CreateSparrow() {
   const navigate = useNavigate();
   const [lgShow, setLgShow] = useState(false);
+
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   const onClick = (user) => {
     navigate("/dec");
@@ -47,94 +98,118 @@ function CreateSparrow() {
     { id: 8, text: "Other", image: require("../../Images/other.png") },
   ];
 
-
   return (
     <div className="whole-div">
-      <div className="spr-list-header">
-        <div type="button" className="logo-btn">
-          LOGO
+      <div className="divider">
+        <div className="header-div">
+          <div type={Button} className="logo-button">
+            LOGO
+          </div>
+          <div type={Image} className="help-img"></div>
         </div>
-        <div type="image" className="help-img"></div>
+        <div className="tab-body">
+          <div className="tab-left">
+            <div className="tab-content-div">
+              <div type="image" className="home-img"></div>
+              <div type="text" className="home-text">
+                Home
+              </div>
+            </div>
+            <div className="tab-content-div">
+              <div type="image" className="all-spr-img"></div>
+              <div type="text" className="all-spr-text">
+                All Sparrows
+              </div>
+            </div>
+            <div className="new-spr" onClick={() => setLgShow(true)}>
+              <div className="new-spr-img"></div>
+              <div className="new-spr-text">New Sparrow</div>
+            </div>
+            <div className="tab-content-div">
+              <div type="image" className="drop-down-img2"></div>
+              <div type="text" className="left-content-text">
+                Received
+              </div>
+            </div>
+            <div className="tab-content-div">
+              <div type="image" className="drop-down-img2"></div>
+              <div type="text" className="left-content-text">
+                Draft
+              </div>
+            </div>
+            <div className="tab-content-div">
+              <div type="image" className="drop-down-img2"></div>
+              <div type="text" className="left-content-text">
+                Send
+              </div>
+            </div>
+            <div className="tab-content-div">
+              <div type="image" className="drop-down-img2"></div>
+              <div type="text" className="left-content-text">
+                Closed
+              </div>
+            </div>
+          </div>
+          <div className="tab-right">
+            <div className="tab-right-header">
+              <div type="text">All Sparrows</div>
+            </div>
+            <div className="tab-right-body">
+              <div className="search-bar">
+                <div type="image" className="search-img"></div>
+                <MDBCol md="6">
+                  <div className="active-pink-3 active-pink-4 mb-4">
+                    <input
+                      className="form-control search-input"
+                      type="text"
+                      placeholder="Search"
+                      aria-label="Search"
+                    />
+                  </div>
+                </MDBCol>
+              </div>
+              <div className="drop-down-div">
+                <div type="text" className="drop-down-text">
+                  By Priority
+                </div>
+                <div type="image" className="drop-down-img"></div>
+              </div>
+              <div className="drop-down-div">
+                <div className="drop-down-text">By Due Date</div>
+                <div className="drop-down-img"></div>
+              </div>
+              <div className="drop-down-div">
+                <div className="drop-down-text">By Status</div>
+                <div className="drop-down-img"></div>
+              </div>
+              <div className="clr-filter" type="text">
+                Clear Filters
+              </div>
+            </div>
+            <Box className="sx">
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="basic tabs example"
+              >
+                <Tab label="All" {...a11yProps(0)} />
+                <Tab label="Received" {...a11yProps(1)} />
+                <Tab label="Sent" {...a11yProps(2)} />
+              </Tabs>
+            </Box>
+            <TabPanel value={value} index={0}>
+              <AllSparrows/>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <ReceivedSparrows/>
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <SentSparrows/>
+            </TabPanel>
+          </div>
+        </div>
       </div>
-      <div className="spr-list-bottom">
-        <div className="tab-left" type="button">
-          <div className="home">
-            <div type="image" className="home-img"></div>
-            <div type="text" className="home-text">
-              Home
-            </div>
-          </div>
-          <div className="allsparrows">
-            <div type="image" className="all-spr-img"></div>
-            <div type="text" className="all-spr-text">
-              All Sparrows
-            </div>
-          </div>
-          <div className="new-spr" onClick={() => setLgShow(true)}>
-            <div type="image" className="new-spr-img"></div>
-            <div type="text" className="new-spr-text">
-              New Sparrow
-            </div>
-          </div>
-          <div className="received">
-            <div type="image" className="received-img"></div>
-            <div type="text" className="received-text">
-              Received
-            </div>
-          </div>
-          <div className="draft">
-            <div type="image" className="draft-img"></div>
-            <div type="text" className="draft-text">
-              Draft
-            </div>
-          </div>
-          <div className="sent">
-            <div type="image" className="sent-img"></div>
-            <div type="text" className="sent-text">
-              Sent
-            </div>
-          </div>
-          <div className="closed">
-            <div type="image" className="closed-img"></div>
-            <div type="text" className="closed-text">
-              Closed
-            </div>
-          </div>
-        </div>
-        <div className="tab-right">
-          <div className="all-spr-header-div">
-            <div type="text" className="all-spr-header">
-              All Sparrows
-            </div>
-          </div>
-          <div className="header-top">
-            <div className="search-bar">
-              <div type="image" className="search-bar-img"></div>
-            </div>
-            <div className="priority-drop-down-div">
-              <div type="text" className="priority-drop-down-text">
-                By Priority
-              </div>
-              <div type="image" className="priority-drop-down-img"></div>
-            </div>
-            <div className="priority-drop-down-div">
-              <div type="text" className="priority-drop-down-text">
-                By Due Date
-              </div>
-              <div type="image" className="priority-drop-down-img"></div>
-            </div>
-            <div className="priority-drop-down-div">
-              <div type="text" className="priority-drop-down-text">
-                By Status
-              </div>
-              <div type="image" className="priority-drop-down-img"></div>
-            </div>
-            <div>
-              <div className="clr-filter">Clear Filters</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <Modal
         size="lg"
         show={lgShow}
@@ -164,5 +239,4 @@ function CreateSparrow() {
     </div>
   );
 }
-
 export default CreateSparrow;
