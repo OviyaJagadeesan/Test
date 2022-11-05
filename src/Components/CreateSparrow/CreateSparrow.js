@@ -12,9 +12,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-
-// import AllSparrows from "../AllSparrows/AllSparrows";
-// import SentSparrows from "../SentSparrows/SentSparrows";
+import Select from "react-select";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -98,92 +96,114 @@ function CreateSparrow() {
     { id: 8, text: "Other", image: require("../../Images/other.png") },
   ];
 
+  const priorityoptions = [
+    { value: "high", label: "High" },
+    { value: "medium", label: "Medium" },
+    { value: "low", label: "Low" },
+  ];
+
+  const duedateoptions = [
+    { value: "today", label: "Today" },
+    { value: "tomorrow", label: "Tomorrow" },
+    { value: "thisweek", label: "This Week" },
+    { value: "nextweek", label: "Next Week" },
+    { value: "thismonth", label: "This Month" },
+    { value: "nextmonth", label: "Next Month" },
+  ];
+
+  const statusoptions = [
+    { value: "notstarted", label: "Not Started" },
+    { value: "accepted", label: "Accepted" },
+    { value: "declined", label: "Declined" },
+    { value: "inprogress", label: "In Progress" },
+    { value: "paused", label: "Paused" },
+    { value: "blocked", label: "Blocked" },
+    { value: "completed", label: "Completed" },
+    { value: "draft", label: "Draft" },
+  ];
+
+  const [priorityName, setPriorityName] = useState();
+  const priorityHandler = (e) => {
+    setPriorityName(e.value);
+  };
+
   return (
-    <div className="whole-div">
+    <div className="wholeDiv">
       <div className="divider">
-        <div className="header-div">
-          <div type={Button} className="logo-button">
+        <div className="headerDiv">
+          <div type={Button} className="logoButton">
             LOGO
           </div>
-          <div type={Image} className="help-img"></div>
+          <div type={Image} className="helpImg"></div>
         </div>
-        <div className="tab-body">
-          <div className="tab-left">
-            <div className="tab-content-div">
-              <div type="image" className="home-img"></div>
-              <div type="text" className="home-text">
-                Home
-              </div>
+        <div className="tabBody">
+          <div className="tabLeft">
+            <div className="tabContentDiv">
+              <div type="image" className="homeImg"></div>
+              <div type="text">Home</div>
             </div>
-            <div className="tab-content-div">
-              <div type="image" className="all-spr-img"></div>
-              <div type="text" className="all-spr-text">
-                All Sparrows
-              </div>
+            <div className="tabContentDiv">
+              <div type="image" className="allSprImg"></div>
+              <div type="text">All Sparrows</div>
             </div>
-            <div className="new-spr" onClick={() => setLgShow(true)}>
-              <div className="new-spr-img"></div>
-              <div className="new-spr-text">New Sparrow</div>
+            <div className="newSpr" onClick={() => setLgShow(true)}>
+              <div className="newSprImg"></div>
+              <div type="text">New Sparrow</div>
             </div>
-            <div className="tab-content-div">
-              <div type="image" className="drop-down-img2"></div>
-              <div type="text" className="left-content-text">
+            <div className="tabContentDiv">
+              <div type="image" className="dropDownImg2"></div>
+              <div type="text" className="leftContentText">
                 Received
               </div>
             </div>
-            <div className="tab-content-div">
-              <div type="image" className="drop-down-img2"></div>
-              <div type="text" className="left-content-text">
+            <div className="tabContentDiv">
+              <div type="image" className="dropDownImg2"></div>
+              <div type="text" className="leftContentText">
                 Draft
               </div>
             </div>
-            <div className="tab-content-div">
-              <div type="image" className="drop-down-img2"></div>
-              <div type="text" className="left-content-text">
+            <div className="tabContentDiv">
+              <div type="image" className="dropDownImg2"></div>
+              <div type="text" className="leftContentText">
                 Send
               </div>
             </div>
-            <div className="tab-content-div">
-              <div type="image" className="drop-down-img2"></div>
-              <div type="text" className="left-content-text">
+            <div className="tabContentDiv">
+              <div type="image" className="dropDownImg2"></div>
+              <div type="text" className="leftContentText">
                 Closed
               </div>
             </div>
           </div>
-          <div className="tab-right">
-            <div className="tab-right-header">
+          <div className="tabRight">
+            <div className="tabRightHeader">
               <div type="text">All Sparrows</div>
             </div>
-            <div className="tab-right-body">
-              <div className="search-bar">
-                <div type="image" className="search-img"></div>
-                <MDBCol md="6">
-                  <div className="active-pink-3 active-pink-4 mb-4">
-                    <input
-                      className="form-control search-input"
-                      type="text"
-                      placeholder="Search"
-                      aria-label="Search"
-                    />
-                  </div>
-                </MDBCol>
-              </div>
-              <div className="drop-down-div">
-                <div type="text" className="drop-down-text">
-                  By Priority
+            <div>
+              <div className="card titleCard">
+                <div className="searchBar">
+                  <div className="searchImage"></div>
+                  <input className="searchInput"></input>
                 </div>
-                <div type="image" className="drop-down-img"></div>
-              </div>
-              <div className="drop-down-div">
-                <div className="drop-down-text">By Due Date</div>
-                <div className="drop-down-img"></div>
-              </div>
-              <div className="drop-down-div">
-                <div className="drop-down-text">By Status</div>
-                <div className="drop-down-img"></div>
-              </div>
-              <div className="clr-filter" type="text">
-                Clear Filters
+                <Select
+                  options={priorityoptions}
+                  placeholder="My Priority"
+                  className="priorityBar"
+                  onChange={priorityHandler}
+                />
+                <Select
+                  options={duedateoptions}
+                  placeholder="My Due Date"
+                  className="dueDateBar"
+                />
+                <Select
+                  options={statusoptions}
+                  placeholder="My Status"
+                  className="statusBar"
+                />
+                <div type="text" className="clearFilters">
+                  Clear Filters
+                </div>
               </div>
             </div>
             <Box className="sx">
@@ -198,13 +218,13 @@ function CreateSparrow() {
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-              <AllSparrows/>
+              <AllSparrows />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <ReceivedSparrows/>
+              <ReceivedSparrows />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <SentSparrows/>
+              <SentSparrows />
             </TabPanel>
           </div>
         </div>
@@ -217,7 +237,7 @@ function CreateSparrow() {
         keyboard={false}
         onHide={() => setLgShow(false)}
       >
-        <Modal.Header closeButton className="modal-head-foot-bg-color">
+        <Modal.Header closeButton className="modalHeadFootBgColor">
           <Modal.Title>Select Outcome</Modal.Title>
         </Modal.Header>
         <Modal.Body>
