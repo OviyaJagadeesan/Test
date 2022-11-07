@@ -1,5 +1,5 @@
 import { Button } from "bootstrap";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../CreateSparrow/CreateSparrow.css";
 import { MDBCol } from "mdbreact";
 import SentSparrows from "../SentSparrows/SentSparrows";
@@ -13,6 +13,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Select from "react-select";
+import axios from "axios";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -50,6 +51,19 @@ function a11yProps(index) {
 function CreateSparrow() {
   const navigate = useNavigate();
   const [lgShow, setLgShow] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [searchTitle, setSearchTitle] = useState("");
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      setLoading(true);
+      const response = await axios.get();
+      setPosts(response.data);
+      setLoading(false);
+    };
+    loadPosts();
+  }, []);
 
   const [value, setValue] = React.useState(0);
 
@@ -123,8 +137,24 @@ function CreateSparrow() {
   ];
 
   const [priorityName, setPriorityName] = useState();
+  const [isClicked,setIsClicked]=useState(false);
   const priorityHandler = (e) => {
+    // console.log(e.value);
     setPriorityName(e.value);
+     setIsClicked(true);
+
+  };
+
+  const [dueDate, setDueDate] = useState();
+  const dueDateHandler = (e) => {
+    setDueDate(e.value);
+    // console.log(e.value);
+  };
+
+  const [status, setStatus] = useState();
+  const statusHandler = (e) => {
+    // console.log(e.value);
+    setStatus(e.value);
   };
 
   return (
@@ -183,7 +213,28 @@ function CreateSparrow() {
               <div className="card titleCard">
                 <div className="searchBar">
                   <div className="searchImage"></div>
-                  <input className="searchInput"></input>
+                  <input
+                    className="searchInput"
+                    placeholder="Search"
+                    onChange={(e) => setSearchTitle(e.target.value)}
+                  ></input>
+                  {loading ? (
+                    <h3></h3>
+                  ) : (
+                    posts
+                      .filter((value) => {
+                        if (searchTitle === "") {
+                          return value;
+                        } else if (
+                          value.title
+                            .toLowerCase()
+                            .includes(searchTitle.toLowerCase())
+                        ) {
+                          return value;
+                        }
+                      })
+                      .map((item) => <h5 key={item.id}>{item.title}</h5>)
+                  )}
                 </div>
                 <Select
                   options={priorityoptions}
@@ -195,11 +246,13 @@ function CreateSparrow() {
                   options={duedateoptions}
                   placeholder="My Due Date"
                   className="dueDateBar"
+                  onChange={dueDateHandler}
                 />
                 <Select
                   options={statusoptions}
                   placeholder="My Status"
                   className="statusBar"
+                  onChange={statusHandler}
                 />
                 <div type="text" className="clearFilters">
                   Clear Filters
@@ -218,13 +271,13 @@ function CreateSparrow() {
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-              <AllSparrows />
+              <AllSparrows pName={priorityName} clicked={isClicked}/>
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <ReceivedSparrows />
+              <ReceivedSparrows dName={dueDate} />
             </TabPanel>
             <TabPanel value={value} index={2}>
-              <SentSparrows />
+              <SentSparrows sName={status} />
             </TabPanel>
           </div>
         </div>

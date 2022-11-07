@@ -1,12 +1,13 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "../AllSparrows/AllSparrows.css";
 import { useNavigate } from "react-router-dom";
+import DetailsView from "../DetailsView/DetailsView";
 
 const all_sparrows = [
   {
     id: 1,
     priority: require("../../Images/Low.png"),
-    priorityname:"low",
+    priorityname: "low",
     title: "Postpone production release to June 5th",
     outcome: "Decision Required",
     duedate: "Today",
@@ -15,7 +16,7 @@ const all_sparrows = [
   {
     id: 2,
     priority: require("../../Images/High.png"),
-    priorityname:"high",
+    priorityname: "high",
     title: "Action plan for customer communication post release",
     outcome: "Deliverable",
     duedate: "In 2 Days",
@@ -24,7 +25,7 @@ const all_sparrows = [
   {
     id: 3,
     priority: require("../../Images/Medium.png"),
-    priorityname:"medium",
+    priorityname: "medium",
     title: "Reach out to churned customers in Q1",
     outcome: "Action Item",
     duedate: "Today",
@@ -33,7 +34,7 @@ const all_sparrows = [
   {
     id: 4,
     priority: require("../../Images/High.png"),
-    priorityname:"high",
+    priorityname: "high",
     title: "Finance policy for travel has been updated",
     outcome: "FYI",
     duedate: "In a Day",
@@ -42,7 +43,7 @@ const all_sparrows = [
   {
     id: 5,
     priority: require("../../Images/Low.png"),
-    priorityname:"low",
+    priorityname: "low",
     title: "Monthly Business Review Deck",
     outcome: "Status Update",
     duedate: "4/25/2022",
@@ -50,8 +51,8 @@ const all_sparrows = [
   },
   {
     id: 6,
-    priority: require("../../Images/Medium.png"),
-    priorityname:"medium",
+    priority: require("../../Images/Low.png"),
+    priorityname: "low",
     title: "25% discount for customer Apex",
     outcome: "Approval Required",
     duedate: "4/25/2022",
@@ -59,43 +60,95 @@ const all_sparrows = [
   },
 ];
 
-function AllSparrows(allSprId) {
+function AllSparrows(props) {
   const navigate = useNavigate();
-  // const [sid,setSid]=useState();
-  const onClick = (spr) => {
-  };
+
   return (
     <div>
       <div className="row topHeader">
-        <div className="col-6 col-md-2 col-lg-1 headerTitle">PRIORITY</div>
-        <div className="col-6 col-md-10 col-lg-3 headerTitle">TITLE</div>
-        <div className="col-5 col-md-6 col-lg-2 headerTitle">OUTCOME</div>
-        <div className="col-7 col-md-6 col-lg-1 headerTitle">FROM/TO</div>
-        <div className="col-4 col-md-5 col-lg-2 headerTitle">DUE DATE</div>
-        <div className="col-4 col-md-5 col-lg-2 headerTitle">STATUS</div>
-        <div className="col-4 col-md-2 col-lg-1 headerTitle"></div>
+        <div className="col-6 col-md-2 col-lg-1 col-xl-1 headerTitle">
+          PRIORITY
+        </div>
+        <div className="col-6 col-md-10 col-lg-3 col-xl-3 headerTitle">
+          TITLE
+        </div>
+        <div className="col-5 col-md-6 col-lg-2 col-xl-2 headerTitle">
+          OUTCOME
+        </div>
+        <div className="col-7 col-md-6 col-lg-1 col-xl-1 headerTitle">
+          FROM/TO
+        </div>
+        <div className="col-4 col-md-5 col-lg-2 col-xl-3 headerTitle">
+          DUE DATE
+        </div>
+        <div className="col-4 col-md-5 col-lg-2 col-xl-1 headerTitle">
+          STATUS
+        </div>
+        <div className="col-4 col-md-2 col-lg-1 col-cl-2 headerTitle"></div>
       </div>
-      <div className="row sparrowCard">
-      {/* {data && data
-.filter((user) => {
-    return ((users.Category) && user.Category.startsWith(users.Category))
-}) */}
-        {all_sparrows.map((spr) => (
+      <div className="row sparrowCard"> 
+      {!props.clicked?
+        (all_sparrows
+        .map((spr)=>(
           <div
-            className="contentAllSpr"
-            onClick={() => {
-              onClick(spr);
-            }}
-          >
-            <img className="col-6 col-md-2 col-lg-1 priorityImage" src={spr.priority}></img>
-            <div className="col-6 col-md-10 col-lg-3 titleText">{spr.title}</div>
-            <div className="col-5 col-md-6 col-lg-2 outcomeText">{spr.outcome}</div>
-            <img className="col-7 col-md-6 col-lg-1 fromtoImage" src={spr.fromto}></img>
-            <div className="col-4 col-md-5 col-lg-2 dateAndStatusText">{spr.duedate}</div>
-            <div className="col-4 col-md-5 col-lg-2 dateAndStatusText">{spr.status}</div>
-            <div className="col-4 col-md-2 col-lg-1"></div>
-          </div>
-        ))}
+              className="contentAllSpr" 
+            >
+              <img
+                className="col-2 col-md-1 col-lg-1 col-xl-1 priorityImage"
+                src={spr.priority}
+              ></img>
+              <div className="col-10 col-md-3 col-lg-3 col-xl-3 titleText">
+                {spr.title}
+              </div>
+              <div className="col-6 col-md-2 col-lg-2 col-xl-2 outcomeText">
+                {spr.outcome}
+              </div>
+              <img
+                className="col-6 col-md-2 col-lg-2 col-xl-2 fromtoImage"
+                src={spr.fromto}
+              ></img>
+              <div className="col-5 col-md-1 col-lg-1 col-xl-1 dateAndStatusText">
+                {spr.duedate}
+              </div>
+              <div className="col-5 col-md-2 col-lg-2 col-xl-2 dateAndStatusText">
+                {spr.status}
+              </div>
+              <div className="col-2 col-md-1 col-lg-1 col-xl-1"></div>
+            </div>
+        ))):
+        (all_sparrows
+          .filter((user) => {
+            console.log(user.priorityname);
+            return props.pName && user.priorityname.startsWith(props.pName);
+          })
+          .map((spr) => (
+            <div
+              className="contentAllSpr"
+              
+            >
+              <img
+                className="col-2 col-md-1 col-lg-1 col-xl-1 priorityImage"
+                src={spr.priority}
+              ></img>
+              <div className="col-10 col-md-3 col-lg-3 col-xl-3 titleText">
+                {spr.title}
+              </div>
+              <div className="col-6 col-md-2 col-lg-2 col-xl-2 outcomeText">
+                {spr.outcome}
+              </div>
+              <img
+                className="col-6 col-md-2 col-lg-2 col-xl-2 fromtoImage"
+                src={spr.fromto}
+              ></img>
+              <div className="col-5 col-md-1 col-lg-1 col-xl-1 dateAndStatusText">
+                {spr.duedate}
+              </div>
+              <div className="col-5 col-md-2 col-lg-2 col-xl-2 dateAndStatusText">
+                {spr.status}
+              </div>
+              <div className="col-2 col-md-1 col-lg-1 col-xl-1"></div>
+            </div>
+          )))}
       </div>
     </div>
   );
