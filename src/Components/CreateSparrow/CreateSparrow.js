@@ -284,7 +284,7 @@ function CreateSparrow() {
       </div>
 
       <Modal
-        size="lg"
+        size="xl"
         show={lgShow}
         backdrop="static"
         keyboard={false}

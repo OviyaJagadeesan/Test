@@ -1,4 +1,4 @@
-.topHeader{
+.topHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,29 +7,29 @@
     margin-top: 10px;
 }
 
-.headerTitle{
+.headerTitle {
     text-align: center;
 }
 
-.sparrowCard{
+.sparrowCard {
     margin-bottom: 20px;
 }
 
-.contentAllSpr{
+.contentAllSpr {
     align-items: center;
     margin: 0;
-    margin-bottom:5px;
+    margin-bottom: 5px;
     justify-content: space-evenly;
     width: 100%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius:8px;
+    border-radius: 8px;
     opacity: 1;
     display: flex;
-    min-height:49px;
+    min-height: 49px;
     cursor: pointer;
 }
 
-.priorityImage{
+.priorityImage {
     padding: 0;
     margin: auto;
     height: 25px;
@@ -38,14 +38,166 @@
     justify-content: center;
 }
 
-.titleText{
+.titleText {
     text-align: left;
 }
 
-.outcomeText{
+.outcomeText {
     text-align: center;
-    padding: 0  ;
+    padding: 0;
 }
-.dataAndStatusText{
+
+.dataAndStatusText {
     text-align: center !important;
 }
+
+.modalView {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftSideModal {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.leftSideHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.leftHeader {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.leftSideTopBody {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleDiv{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contentDiv{
+    margin-top: 16px;
+    color: #0C092A;
+    text-align: justify;
+}
+
+.leftSideBottomBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.commentsHeader{
+    margin-top: 20px;
+    color: #0C092A;
+}
+
+.rightHeader {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.leftSideBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imageDiv {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+}
+
+.slackLogo {
+    background: url("../../Images/slack.png")no-repeat;
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+.outlookLogo {
+    background: url("../../Images/outlook.png")no-repeat;
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+.teamsLogo {
+    background: url("../../Images/teams.png")no-repeat;
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+.mailLogo {
+    background: url("../../Images/gmail.png")no-repeat;
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+.jiraLogo {
+    background: url("../../Images/jira.png")no-repeat;
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+.rightSideModal {
+    width: 40%;
+    background-color: #F7F6FD;
+}
+
+.dateText {
+    text-align: center;
+}
+
+.dateTextField {
+    height: fit-content;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 5px;
+}
+
+.declineButton {
+    width: 40%;
+    padding: 5px;
+    border: 1px solid red;
+    margin: 0;
+    text-align: center;
+    color:red;
+}
+
+.acceptButton {
+    width: 40%;
+    padding: 5px;
+    border: 1px solid gray;
+    margin: 0;
+    text-align: center;
+    background-color: #6A5AE0;
+}
+
+.verticalLine{
+    height: '100%';
+    width: 4;
+    background-color: '#909090';
+  }

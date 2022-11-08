@@ -24,8 +24,6 @@ const sent_sparrows = [
 function SentSparrows() {
   const navigate = useNavigate();
 
-  const onClick = (spr) => {
-  };
   return (
     <div>
       <div className="row topHeader">
@@ -41,9 +39,6 @@ function SentSparrows() {
         {sent_sparrows.map((spr) => (
           <div
             className="contentAllSpr"
-            onClick={() => {
-              onClick(spr);
-            }}
           >
             <img className="col-md-2 col-lg-1 priorityImage" src={spr.priority}></img>
             <div className="col-md-10 col-lg-3 titleText">{spr.title}</div>
