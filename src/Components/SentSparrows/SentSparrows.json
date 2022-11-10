@@ -5,7 +5,8 @@
       "title": "25% discount for customer Apex",
       "outcome": "Approval Required",
       "duedate": "4/25/2022",
-      "status": "In Progress"
+      "status": "In Progress",
+      "role":"Watching"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "title": "Monthly Business Review Deck",
       "outcome": "Status Update",
       "duedate": "4/25/2022",
-      "status": "Blocked"
+      "status": "Blocked",
+      "role":"Watching"
     }
   ]
 }

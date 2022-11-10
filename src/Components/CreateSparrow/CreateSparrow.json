@@ -20,11 +20,17 @@
       "id": 5,
       "text": "Status Update"
     },
-    { "id": 6, "text": "FYI" },
+    { 
+      "id": 6, 
+      "text": "FYI" 
+    },
     {
       "id": 7,
       "text": "Approval Requested"
     },
-    { "id": 8, "text": "Other" }
+    { 
+      "id": 8, 
+      "text": "Other" 
+    }
   ]
 }

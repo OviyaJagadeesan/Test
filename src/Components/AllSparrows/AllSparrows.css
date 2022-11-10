@@ -1,14 +1,17 @@
 .topHeader {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 0;
     padding-bottom: 10px;
     margin-top: 10px;
+    margin-left: 10px;
+    align-items: center;
 }
 
 .headerTitle {
     text-align: center;
+    padding: 2px;
 }
 
 .sparrowCard {
@@ -23,7 +26,20 @@
     width: 100%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 8px;
-    opacity: 1;
+    display: flex;
+    min-height: 49px;
+    cursor: pointer;
+}
+
+.contentAllSprr {
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: 20px;
+    background: 0% 0% no-repeat padding-box;
+    border-radius: 8px;
     display: flex;
     min-height: 49px;
     cursor: pointer;
@@ -45,6 +61,15 @@
 .outcomeText {
     text-align: center;
     padding: 0;
+}
+
+.fromToImage {
+    padding: 0;
+    margin: auto;
+    height: 25px;
+    width: 30px !important;
+    align-items: center;
+    justify-content: center;
 }
 
 .dataAndStatusText {
@@ -73,7 +98,45 @@
     display: flex;
     flex-direction: row;
     width: 50%;
+    margin: 6px 0px 0px 0px;
+}
+
+.dateText {
+    text-align: center;
+}
+
+.dateTextField {
+    height: fit-content;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    margin: 0px 0px 0px 10px;
+}
+
+.rightHeader {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
     justify-content: space-evenly;
+}
+
+.declineButton {
+    width: 40%;
+    padding: 5px;
+    border: 1px solid red;
+    margin: 0;
+    text-align: center;
+    color: red;
+    border-radius: 4px;
+}
+
+.acceptButton {
+    width: 40%;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin: 0;
+    text-align: center;
+    background-color: #6A5AE0;
 }
 
 .leftSideTopBody {
@@ -82,12 +145,12 @@
     flex-direction: column;
 }
 
-.titleDiv{
+.titleDiv {
     font-size: 18px;
     font-weight: bold;
 }
 
-.contentDiv{
+.contentDiv {
     margin-top: 16px;
     color: #0C092A;
     text-align: justify;
@@ -98,16 +161,9 @@
     flex-direction: column;
 }
 
-.commentsHeader{
+.commentsHeader {
     margin-top: 20px;
     color: #0C092A;
-}
-
-.rightHeader {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    justify-content: space-evenly;
 }
 
 .leftSideBottom {
@@ -162,42 +218,108 @@
     margin: 0px;
 }
 
-.rightSideModal {
-    width: 40%;
-    background-color: #F7F6FD;
-}
-
-.dateText {
-    text-align: center;
-}
-
-.dateTextField {
-    height: fit-content;
-    border-radius: 4px;
-    border: 1px solid #ced4da;
-    padding: 5px;
-}
-
-.declineButton {
-    width: 40%;
-    padding: 5px;
-    border: 1px solid red;
-    margin: 0;
-    text-align: center;
-    color:red;
-}
-
-.acceptButton {
-    width: 40%;
-    padding: 5px;
-    border: 1px solid gray;
-    margin: 0;
-    text-align: center;
-    background-color: #6A5AE0;
-}
-
-.verticalLine{
+.verticalLine {
     height: '100%';
     width: 4;
     background-color: '#909090';
-  }
+}
+
+.rightSideModal {
+    width: 40%;
+    background-color: #F7F6FD;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.rightSideHeader {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSideHeaderDetails {
+    padding: 10px;
+}
+
+.Details1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.textDetails {
+    width: 40%;
+}
+
+.imageTextDetails {
+    display: flex;
+    flex-direction: row;
+}
+
+.imagePriority {
+    background: url("../../Images/High.png")no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.imageOutcome {
+    background: url("../../Images/decision_required.png")no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.imageCalendar {
+    background: url("../../Images/calendar.png")no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.imageRequestor{
+    background: url("../../Images/user_male.png")no-repeat;
+    height: 20px;
+    width: 30px;
+}
+
+.statusDiv {
+    width: 90px;
+    border: 1px solid #74BBFE;
+    text-align: center;
+    color: #74BBFE;
+    border-radius: 16px;
+}
+
+.dateDiv {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    border: 1px solid gray;
+    height: 30px;
+    padding: 2px 0px 0px 5px;
+    border-radius: 4px;
+}
+
+.textPadding {
+    padding-left: 10px;
+}
+
+.rightSideBody{
+    padding: 10PX;
+    display: flex;
+    flex-direction: column;
+}
+
+.vline {
+    border-left: 6px solid green;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+
+.alignCss{
+    text-align: center;
+}
+  

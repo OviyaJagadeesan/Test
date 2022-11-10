@@ -4,10 +4,11 @@
         "id": 1,
         "priorityname": "low",
         "image":"https://www.martintham.com/",
-        "title": "Postpone production release to June 5th",
+        "title": "Postpo'ne production release to June 5th",
         "outcome": "Decision Required",
         "duedate": "Today",
-        "status": "Unopened"
+        "status": "Unopened",
+        "role":"Watching"
       },
       {
         "id": 2,
@@ -16,7 +17,8 @@
         "title": "Action plan for customer communication post release",
         "outcome": "Deliverable",
         "duedate": "In 2 Days",
-        "status": "Yet to start"
+        "status": "Yet to start",
+        "role":"Watching"
       },
       {
         "id": 3,
@@ -24,7 +26,8 @@
         "title": "Reach out to churned customers in Q1",
         "outcome": "Action Item",
         "duedate": "Today",
-        "status": "In progress"
+        "status": "In progress",
+        "role":"Watching"
       },
       {
         "id": 4,
@@ -33,7 +36,8 @@
         "title": "Finance policy for travel has been updated",
         "outcome": "FYI",
         "duedate": "In a Day",
-        "status": "Unopened"
+        "status": "Unopened",
+        "role":"Watching"
       },
       {
         "id": 5,
@@ -42,7 +46,8 @@
         "title": "Monthly Business Review Deck",
         "outcome": "Status Update",
         "duedate": "4/25/2022",
-        "status": "Blocked"
+        "status": "Blocked",
+        "role":"Watching"
       },
       {
         "id": 6,
@@ -51,7 +56,8 @@
         "title": "25% discount for customer Apex",
         "outcome": "Approval Required",
         "duedate": "4/25/2022",
-        "status": "In Progress"
+        "status": "In Progress",
+        "role":"Watching"
       }
     ]
   }
