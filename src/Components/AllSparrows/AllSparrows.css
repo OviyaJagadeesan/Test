@@ -48,8 +48,8 @@
 .priorityImage {
     padding: 0;
     margin: auto;
-    height: 25px;
-    width: 30px !important;
+    height: 30px;
+    width: 30px;
     align-items: center;
     justify-content: center;
 }
@@ -321,5 +321,6 @@
 
 .alignCss{
     text-align: center;
+    margin: 0px;
 }
   

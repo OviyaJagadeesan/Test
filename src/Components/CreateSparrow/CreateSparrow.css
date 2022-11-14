@@ -140,7 +140,7 @@
 }
 
 .searchInput{
-    width: 75%;
+    width: 65%;
     display: flex;
     background-color: gainsboro !important;
     border: 0px solid gainsboro;
@@ -149,7 +149,7 @@
 
 .priorityBar{
     border: 1px solid #707070 !important;
-    width: 15%;
+    width: 18%;
     height: 40px;
 }
 
@@ -159,13 +159,13 @@
 
 .dueDateBar{
     border: 1px solid #707070;
-    width: 20%;
+    width: 18%;
     height: 40px;
 }
 
 .statusBar{
     border: 1px solid #707070;
-    width:20%;
+    width:18%;
     height: 40px;
 }
 

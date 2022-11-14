@@ -1,9 +1,6 @@
 import { Button } from "bootstrap";
 import React, { useState, useEffect } from "react";
 import "../CreateSparrow/CreateSparrow.css";
-import { MDBCol } from "mdbreact";
-import SentSparrows from "../SentSparrows/SentSparrows";
-import ReceivedSparrows from "../ReceivedSparrows/ReceivedSparrows";
 import AllSparrows from "../AllSparrows/AllSparrows";
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +11,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Select from "react-select";
 import axios from "axios";
+import SentSparrows from "../SentSparrows/SentSparrows";
+import ReceivedSparrows from "../ReceivedSparrows/ReceivedSparrows";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -55,6 +54,7 @@ function CreateSparrow() {
   const [posts, setPosts] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
 
+  const[showSent,setShowSent]=useState(false);
   useEffect(() => {
     const loadPosts = async () => {
       setLoading(true);
@@ -157,6 +157,9 @@ function CreateSparrow() {
     setStatus(e.value);
   };
 
+  const ovi=()=>{
+    setShowSent(true);
+  }
   return (
     <div className="wholeDiv">
       <div className="divider">
@@ -192,10 +195,11 @@ function CreateSparrow() {
                 Draft
               </div>
             </div>
-            <div className="tabContentDiv">
+            <div className="tabContentDiv" onClick={ovi}>
+              {}
               <div type="image" className="dropDownImg2"></div>
               <div type="text" className="leftContentText">
-                Send
+                Sent
               </div>
             </div>
             <div className="tabContentDiv">

@@ -15,7 +15,6 @@ function AllSparrows(props) {
   }/${current.getFullYear()}`;
 
   useEffect(() => {
-    console.log("kaviya");
     axios
       .get("http://localhost:3002/sparrowdata")
       .then((res) => {
@@ -30,56 +29,56 @@ function AllSparrows(props) {
   return (
     <div>
       <div className="row contentAllSprr">
-        <div className="col-2 col-md-1 col-lg-1 col-xl-1 alignCss headerTitle">
+        <div className="col-2 col-md-2 col-lg-2 col-xl-1 alignCss headerTitle">
           PRIORITY
         </div>
-        <div className="col-10 col-md-3 col-lg-3 col-xl-3 alignCss headerTitle">
+        <div className="col-10 col-md-10 col-lg-6 col-xl-3 alignCss headerTitle">
           TITLE
         </div>
-        <div className="col-6 col-md-2 col-lg-2 col-xl-2 alignCss headerTitle">
+        <div className="col-6 col-md-6 col-lg-4 col-xl-2 alignCss headerTitle">
           OUTCOME
         </div>
-        <div className="col-6 col-md-2 col-lg-2 col-xl-2 alignCss headerTitle">
+        <div className="col-6 col-md-6 col-lg-2 col-xl-2 alignCss headerTitle">
           FROM/TO
         </div>
-        <div className="col-5 col-md-1 col-lg-1 col-xl-1 alignCss headerTitle">
+        <div className="col-5 col-md-5 col-lg-3 col-xl-1 alignCss headerTitle">
           DUE DATE
         </div>
-        <div className="col-5 col-md-2 col-lg-2 col-xl-2 alignCss headerTitle">
+        <div className="col-5 col-md-5 col-lg-4 col-xl-2 alignCss headerTitle">
           STATUS
         </div>
-        <div className="col-2 col-md-1 col-lg-1 col-xl-1 alignCss headerTitle"></div>
+        <div className="col-2 col-md-2 col-lg-3 col-xl-1 alignCss headerTitle">NOTIFY</div>
       </div>
-      <div className="row sparrowCard">
+      <div className="Row sparrowCard">
         {!props.clicked
           ? sprDetails &&
             sprDetails.map((spr) => (
               <div>
                 <div
-                  className="contentAllSpr"
+                  className="row contentAllSpr"
                   onClick={() => setModalShow(true)}
                 >
                   <img
-                    className="col-2 col-md-1 col-lg-1 col-xl-1 priorityImage"
+                    className="col-2 col-md-2 col-lg-2 col-xl-1 alignCss priorityImage"
                     src={spr.priority}
                   ></img>
-                  <div className="col-10 col-md-3 col-lg-3 col-xl-3 alignCss">
+                  <div className="col-10 col-md-10 col-lg-6 col-xl-3 alignCss titleText">
                     {spr.title}
                   </div>
-                  <div className="col-6 col-md-2 col-lg-2 col-xl-2 alignCss">
+                  <div className="col-6 col-md-6 col-lg-4 col-xl-2 alignCss outcomeText">
                     {spr.outcome}
                   </div>
                   <img
-                    className="col-6 col-md-2 col-lg-2 col-xl-2 alignCss"
+                    className="col-6 col-md-6 col-lg-2 col-xl-2 alignCss fromtoImage"
                     src={spr.fromto}
                   ></img>
-                  <div className="col-5 col-md-1 col-lg-1 col-xl-1 alignCss">
+                  <div className="col-5 col-md-5 col-lg-3 col-xl-1 alignCss dateAndStatusText">
                     {spr.duedate}
                   </div>
-                  <div className="col-5 col-md-2 col-lg-2 col-xl-2 alignCss">
+                  <div className="col-5 col-md-5 col-lg-4 col-xl-2 alignCss dateAndStatusText">
                     {spr.status}
                   </div>
-                  <div className="col-2 col-md-1 col-lg-1 col-xl-1 alignCss"></div>
+                  <div className="col-2 col-md-2 col-lg-3 col-xl-1"></div>
                 </div>
               </div>
             ))
@@ -90,28 +89,28 @@ function AllSparrows(props) {
                 return props.pName && user.priorityname.startsWith(props.pName);
               })
               .map((spr) => (
-                <div className="contentAllSpr">
+                <div className="row contentAllSpr">
                   <img
-                    className="col-2 col-md-1 col-lg-1 col-xl-1 priorityImage"
+                    className="col-2 col-md-2 col-lg-1 col-xl-1 alignCss priorityImage"
                     src={spr.priority}
                   ></img>
-                  <div className="col-10 col-md-3 col-lg-3 col-xl-3 titleText">
+                  <div className="col-10 col-md-10 col-lg-3 col-xl-3 alignCss titleText">
                     {spr.title}
                   </div>
-                  <div className="col-6 col-md-2 col-lg-2 col-xl-2 outcomeText">
+                  <div className="col-6 col-md-6 col-lg-2 col-xl-2 alignCss outcomeText">
                     {spr.outcome}
                   </div>
                   <img
-                    className="col-6 col-md-2 col-lg-2 col-xl-2 fromtoImage"
+                    className="col-6 col-md-6 col-lg-2 col-xl-1 alignCss fromtoImage"
                     src={spr.fromto}
                   ></img>
-                  <div className="col-5 col-md-1 col-lg-1 col-xl-1 dateAndStatusText">
+                  <div className="col-5 col-md-5 col-lg-1 col-xl-2 alignCss dateAndStatusText">
                     {spr.duedate}
                   </div>
-                  <div className="col-5 col-md-2 col-lg-2 col-xl-2 dateAndStatusText">
+                  <div className="col-5 col-md-4 col-lg-2 col-xl-2 dateAndStatusText">
                     {spr.status}
                   </div>
-                  <div className="col-2 col-md-1 col-lg-1 col-xl-1"></div>
+                  <div className="col-2 col-md-3 col-lg-1 col-xl-1"></div>
                 </div>
               ))}
       </div>
