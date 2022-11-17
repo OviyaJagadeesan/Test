@@ -276,7 +276,7 @@
     width: 30px;
 }
 
-.imageRequestor{
+.imageRequestor {
     background: url("../../Images/user_male.png")no-repeat;
     height: 20px;
     width: 30px;
@@ -304,23 +304,19 @@
     padding-left: 10px;
 }
 
-.rightSideBody{
+.rightSideBody {
     padding: 10PX;
     display: flex;
     flex-direction: column;
 }
 
+
 .vline {
-    border-left: 6px solid green;
+    border-left: 1px solid green;
     height: 500px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
 }
 
-.alignCss{
+.alignCss {
     text-align: center;
     margin: 0px;
 }
-  

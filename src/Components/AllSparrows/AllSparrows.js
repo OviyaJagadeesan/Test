@@ -47,7 +47,9 @@ function AllSparrows(props) {
         <div className="col-5 col-md-5 col-lg-4 col-xl-2 alignCss headerTitle">
           STATUS
         </div>
-        <div className="col-2 col-md-2 col-lg-3 col-xl-1 alignCss headerTitle">NOTIFY</div>
+        <div className="col-2 col-md-2 col-lg-3 col-xl-1 alignCss headerTitle">
+          NOTIFY
+        </div>
       </div>
       <div className="Row sparrowCard">
         {!props.clicked
