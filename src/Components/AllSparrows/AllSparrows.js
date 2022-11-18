@@ -152,14 +152,9 @@ function AllSparrows(props) {
                 <div className="titleDiv">
                   Postpone Production Release to Jun 5th
                 </div>
-                <div className="contentDiv">
-                  Team has identified high severity vulnerabilities in the
-                  latest release package scheduled for release this week. After
-                  reviewing the additional work required and resource
-                  availability for the team to to perform regression and
-                  production release, I am advising to schedule the GA for
-                  version 3.12 to June 5th.
-                </div>
+                <p className="contentDiv">
+                  
+                </p>
               </div>
               <div className="leftSideBottomBody">
                 <div className="commentsHeader">Comments</div>
@@ -183,7 +178,7 @@ function AllSparrows(props) {
                 </div>
               </div>
             </div>
-            <div className="vline"></div>
+            {/* <div className="vline"></div> */}
             <div className="rightSideModal">
               <div className="rightSideHeader">
                 <div>Details</div>

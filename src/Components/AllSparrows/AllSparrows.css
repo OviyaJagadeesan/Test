@@ -154,6 +154,10 @@
     margin-top: 16px;
     color: #0C092A;
     text-align: justify;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+    height: 250px;
 }
 
 .leftSideBottomBody {

@@ -294,7 +294,7 @@ function CreateSparrow() {
         onHide={() => setLgShow(false)}
       >
         <Modal.Header closeButton className="modalHeadFootBgColor">
-          <Modal.Title>Select Outcome</Modal.Title>
+          {/* <Modal.Title>Select Outcome</Modal.Title> */}
         </Modal.Header>
         <Modal.Body>
           <div className="grid">
