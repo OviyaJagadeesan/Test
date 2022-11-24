@@ -55,15 +55,15 @@ function CreateSparrow() {
   const [searchTitle, setSearchTitle] = useState("");
   const [showSent, setShowSent] = useState(false);
 
-  useEffect(() => {
-    const loadPosts = async () => {
-      setLoading(true);
-      const response = await axios.get();
-      setPosts(response.data);
-      setLoading(false);
-    };
-    loadPosts();
-  }, []);
+  // useEffect(() => {
+  //   const loadPosts = async () => {
+  //     setLoading(true);
+  //     const response = await axios.get();
+  //     setPosts(response.data);
+  //     setLoading(false);
+  //   };
+  //   loadPosts();
+  // }, []);
 
   const [value, setValue] = React.useState(0);
 

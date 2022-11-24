@@ -181,7 +181,6 @@ function AllSparrows(props) {
                 </div>
               </div>
             </div>
-            <div className="vline"></div>
             <div className="rightSideModal">
               <div className="rightSideHeader">
                 <div>Details</div>
